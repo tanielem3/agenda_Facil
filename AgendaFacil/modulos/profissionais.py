@@ -6,7 +6,7 @@ def cadastrar_profissional():
     nome= input("Nome do Profissional: ")
     telefone = input("Telefone: ")
     email = input("E-mail: ")
-    cursor.execute("INSERT INTO profissional(nome, telefone, email) VALUES (?, ?, ?)", (nome, telefone, email))
+    cursor.execute("INSERT INTO profissionais(nome, telefone, email) VALUES (?, ?, ?)", (nome, telefone, email))
     conexao.commit()
     print("Profissional cadastrado com sucesso!")
     conexao.close()

@@ -3,7 +3,11 @@ from modulos.servicos import cadastrar_servico
 from modulos.profissionais import cadastrar_profissional
 from modulos.especialidades import cadastrar_especialidades
 from modulos.agendamentos import cadastrar_agendamento
+from dados.banco import criar_tabelas
+from modulos.consultas import consultar_agendamentos
+criar_tabelas()
 
+   
 
 while True:
     print("\n" + "=" * 40)
@@ -13,9 +17,9 @@ while True:
 
     print("1 - Cadastro de clientes")
     print("2 - Cadastro de serviços")
-    print("3 - Cadastro de profissionais")
+    print("3 - Cadastro de profissional")
     print("4 - Agendamentos")
-    print("5 - Consultas e histórico")
+    print("5 - Consultar agendamentos")
     print("6 - Cadastro de especialidades")
     print("0 - Sair")
     print("=" * 40)
@@ -35,7 +39,7 @@ while True:
         cadastrar_agendamento()
 
     elif opcao == "5":
-        print("Módulo de consultas e histórico")
+        consultar_agendamentos()
 
     elif opcao == "6":
         cadastrar_especialidades()
