@@ -14,7 +14,7 @@ def criar_tabelas():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         nome TEXT NOT NULL,
         cpf TEXT NOT NULL UNIQUE,
-        email TEXT  NUL,
+        email TEXT,
         telefone TEXT NOT NULL
         )
 """)
