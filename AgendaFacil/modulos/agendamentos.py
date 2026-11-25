@@ -42,16 +42,17 @@ def cadastrar_agendamento():
     print("Serviço escolhido:", servico_escolhido[1])
     print("Valor: R$", servico_escolhido[3])
 
-    data_texto = input("Data do agendamento (DD/MM/AAAA): ")
-    horario = input("Horário (HH:MM): ")
+    while True:
+        data_texto = input("Data do agendamento (DD/MM/AAAA): ")
+        horario = input("Horário (HH:MM): ")
 
-    try:
-        data_agendamento = datetime.strptime(data_texto, "%d/%m/%Y")
-        hora_inicio = datetime.strptime(horario, "%H:%M")
-    except ValueError:
-        print("Data ou horário inválido.")
-        conexao.close()
-        return
+        try:
+            data_agendamento = datetime.strptime(data_texto, "%d/%m/%Y")
+            hora_inicio = datetime.strptime(horario, "%H:%M")
+            break
+        except ValueError:
+            print("Data ou horário inválido.")
+        
 
     if data_agendamento.weekday() == 6:
         print("O salão não funciona aos domingos.")
